@@ -7,9 +7,8 @@ int main(){
     cin >> N;
     int Num[N];
     
-    for(int i=0; i<N; i++){
-        cin >> Num[i];    
-    }
+    for(int i=0; i<N; i++)
+        cin >> Num[i];
     
     min = Num[0];
     max = Num[0];
