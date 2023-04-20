@@ -6,20 +6,19 @@ int main(){
     std::cin >> word;
     
     int maxlen = word.length();
-    int is_palindraome = 1;
+    
+    if(maxlen == 1)
+        std::cout << "1\n";
     
     for(int i=0; i<maxlen/2; i++){
         if(word[i] != word[maxlen-1-i]){
-            is_palindraome = 0;
+            std::cout << "0\n";
             break;
-        }   
+        }
+        if(i == maxlen/2 - 1){
+            std::cout << "1\n";
+        }        
     }
     
-    if(is_palindraome == 1){
-        std::cout << "1\n";
-    }
-    else{
-        std::cout << "0\n";
-    }    
     return 0;
 }
