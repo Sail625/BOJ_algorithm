@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <stack>
+#include <algorithm>
 
 using namespace std;
 
@@ -8,24 +8,23 @@ int main() {
     int N, B;
     cin >> N >> B;
 
-    stack<char> B_Num;
+    string B_Num;
 
     while (N) {
         
-        if (N % B < 10) {
-            B_Num.push(N % B + '0'); //나머지
+        if (N % B < 10) { //나머지
+            B_Num += N % B + '0'; 
         }
         else {
-            B_Num.push(N % B - 10 + 'A');
+            B_Num += N % B - 10 + 'A';
         }
         
         N /= B; //몫
     }
 
-    while(!B_Num.empty()) {
-        cout << B_Num.top();
-        B_Num.pop();
-    }
+    reverse(B_Num.begin(),B_Num.end());
+    
+    cout << B_Num;
 
     return 0;
 }
